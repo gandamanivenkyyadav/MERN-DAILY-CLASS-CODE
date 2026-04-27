@@ -1,0 +1,142 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forms Assignment</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        margin: 20px;
+    }
+    form {
+        background: #fff;
+        padding: 20px;
+        margin-bottom: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+        text-align: center;
+    }
+    label {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+    input, select, textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+    .inline {
+        width: auto;
+    }
+    button {
+        margin-top: 15px;
+        padding: 10px;
+        width: 100%;
+        border: none;
+        background: #19a603;
+        color: rgb(255, 255, 255);
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+    <form>
+        <h2>Registration Form</h2>
+        <label>Full Name</label>
+        <input type="text" name="fullname" placeholder="Enter your name" required>
+
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Enter your email" required>
+
+        <label>Password</label>
+        <input type="password" name="password" required>
+
+        <label>Confirm Password</label>
+        <input type="password" name="confirm_password" required>
+
+        <label>Gender</label>
+        <input type="radio" name="gender" value="male" class="inline" required> Male
+        <input type="radio" name="gender" value="female" class="inline"> Female
+
+        <label>Hobbies</label>
+        <input type="checkbox" name="hobbies" value="reading" class="inline"> Reading
+        <input type="checkbox" name="hobbies" value="sports" class="inline"> Sports
+        <input type="checkbox" name="hobbies" value="music" class="inline"> Music
+
+        <label>Date of Birth</label>
+        <input type="date" name="dob" required>
+
+        <button type="submit">Submit</button>
+        <br><br>
+
+    </form>
+
+
+    <form>
+        <h2>Survey Form</h2><label>User Name</label>
+        <input type="text" name="username" placeholder="Enter your name" required>
+
+        <label>Feedback</label>
+        <textarea name="feedback" placeholder="Enter your feedback" required></textarea>
+
+        <label>Rating</label>
+        <input type="radio" name="rating" value="1" class="inline" required>1
+        <input type="radio" name="rating" value="2" class="inline">2
+        <input type="radio" name="rating" value="3" class="inline">3
+        <input type="radio" name="rating" value="4" class="inline">4
+        <input type="radio" name="rating" value="5" class="inline">5
+
+        <label>Favorite Technology</label>
+        <select name="technology" required>
+            <option value="">Select</option>
+            <option>HTML</option>
+            <option>CSS</option>
+            <option>JavaScript</option>
+            <option>Python</option>
+        </select>
+
+        <label>
+            <input type="checkbox" name="subscribe" class="inline"> Subscribe to newsletter
+        </label>
+
+        <button type="submit">Submit</button>
+        <br><br>
+
+    </form>
+
+
+    <form>
+        <h2>Service Request Form</h2><label>Customer Name</label>
+        <input type="text" name="customer_name" required>
+
+        <label>Contact Number</label>
+        <input type="tel" name="contact" placeholder="10-digit number" pattern="[0-9]{10}" required>
+
+        <label>Issue Type</label>
+        <select name="issue" required>
+            <option value="">Select Issue</option>
+            <option>Laptop Repair</option>
+            <option>Internet Issue</option>
+            <option>Software Problem</option>
+        </select>
+
+        <label>Description</label>
+        <textarea name="description" required></textarea>
+
+        <label>Priority</label>
+        <input type="radio" name="priority" value="low" class="inline" required> Low
+        <input type="radio" name="priority" value="medium" class="inline"> Medium
+        <input type="radio" name="priority" value="high" class="inline"> High
+
+        <button type="submit">Submit</button>
+
+    </form>
+</body>
+</html>
