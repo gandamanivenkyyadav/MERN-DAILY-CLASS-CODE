@@ -1,0 +1,13 @@
+label{
+    color: aquamarine;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+button{
+    background-color: brown;
+    padding: 30px 40px;
+}
+
+label:first-of-type::before{content:"🙎";}
+label:last-of-type::before{content: "🔒"; }

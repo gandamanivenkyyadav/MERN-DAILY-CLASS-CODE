@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> <style>
+
+    /* adjacent sibling selector:
+     used to select direct adjacent elements*/
+
+    ol+h1{
+        background-color: #f0ffff;
+        color: blue;  }
+
+       ul p{ 
+            background-color: red;
+        }
+</style>
+    <h1> order list
+    </h1>
+    <ol> 
+    <li>list-1</li>
+    <li>list-2</li>
+    <li>list-3</li>
+    <li>list-4</li> </ol>
+    <h4> unorder list</h4>
+    <ul> 
+        <li>
+            <p> This is paragraph present in unorder list</p>
+        </li>
+        <li>unorder list</li>
+         <li>unorder list</li>
+          <li>unorder list</li>
+    </ul>
+    <h1> heading in 3rd position </h1>
+    <p>applying stylings by taking <style></style> tag in head part is called as a internal css/ internal stylings.
+   -> to apply internal css we need to used css selectors.</p>
+    <p></p>
+</body>
+</html>

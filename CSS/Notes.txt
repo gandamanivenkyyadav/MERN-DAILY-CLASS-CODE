@@ -1,0 +1,161 @@
+css:
+---
+-> css stands for cascading style sheet used to apply stylings,layouts,animation to the web page.
+-> css are introduced in the year 1994 by the developer "hakon wium lie"
+-> the present version of css is css3 
+
+Methods to apply stylings to web page:
+-------------------------------------
+  1. inline CSS/ inline stylings
+   ->applyying stylings by taking 'style attribute' in html element.
+   ->this stylings is appicable for only that element.
+   -> for inline css not requried css selectors.
+   -> inline stylings is more priority then internal & external.
+  2. internal CSS/ internal stylings
+   -> applying stylings by taking <style></style> tag in head part is called as a internal css/ internal stylings.
+   -> to apply internal css we need to used css selectors.
+  3. external css/ external 
+   -> apply stylings by taking new .css file and link to html file by using <link></link>
+   -> to apply external css we need css selectors.
+
+   CSS selectors:
+   -------------
+    -> css selectors are used to target html elements to apply stylings.
+    -> css selectors are present only in internal & external.
+   types of css selectors:
+   -----------------------
+   1. simple selectors
+   $ id selector(#)
+   $ class selector(.)
+   $ tag selector
+   $ grouping selector(,)
+   $ universal selector(*) 
+   2. combinator selectors 
+     1. descendent selector (space)
+     2. child selector (>)
+     3. adjacent sibling selector(+)
+     4. general sibling selector(~)
+   3. pseudo class selectors 
+    1. structural pseudo class selector
+      -> :first-child
+      -> :last-child
+      -> :first-of-types
+      -> :last-of-types5
+      -> :inth-child()
+    2. dynamic pseudo class selectors
+      -> :active
+      -> :visited = used for anchor tags
+      -> :focus  = used for input tags
+      -> :hover  
+   4. pseudo elements selectors :
+    1. ::after
+    2. ::before
+    3. ::first-letter
+    4. ::first-line
+    5. ::marker
+    6. ::selection
+    7. ::placeholder
+   5. attribute selectors:
+    -> attribute selectors are used to target html element based on attribute
+     ex: <h1 align-"center" id="heading"> hello </h1>
+         <h1 id="heading"> hello </h1>
+         syntax: selecto[attributename="value"]{
+          ...........styling........
+         }
+         types:
+         1. [attributename="value"]
+         2. [attributename^="value"]
+         3. [attributename$="value"]
+         4. [attributename|="value"]
+         5. [attributename*="value"]
+
+         color values:
+         ------------
+
+         1. color name
+         2. rgv( red green blue)
+         3. rgba(red green blue alpha)
+         4. hsl(hue saturation lightness)
+         5. hsl(hue saturation lightness alpha)
+         6. hexa color
+         7. transparent
+         8. color()
+
+         text properties:
+         ---------------
+          -> text properties are used to apply stylings for only'text'
+          properties like:
+          ---------------
+            1. text-alignment
+             * text-align
+             * word-spacing
+             * letter-spacing
+             * text-indent
+             * line-height
+
+            2. text decoration properties
+             * text-decoration-line
+             * text-decoration-color
+             * text-decoration-style
+             * text-decoration-thickness
+             * text-decoration (short hand form)
+
+            3. text tranform properties:
+             * text-tranform: lowercase, uppercase, capitalized
+            4. text-overflow properties:
+             * overflow : visible, auto, scroll
+             * overflow-x
+             * overflow-y
+             
+            5. font properties:
+              * font-size
+              * font-weight
+              * font-style
+              * font-weight 
+
+  CSS box model:
+  -------------
+    1. padding:
+     -> the space btw content and border
+     padding properties:
+     -------------------
+         1. padding-top
+         2. padding-bottom
+         3. padding-left
+         4. padding-right
+         5. padding (short hand form)
+
+    2. border:
+        -> the space btw padding and margin
+      border properties:
+      ------------------
+        1. border-style
+        2. border-width
+        3. border-color
+        4. border (short hand form)
+
+        5. border-top
+        6. border-left
+        7. border-right
+        8. border-bottom
+    3. margin:
+       1. margin-top
+       2. margin-bottom
+       3. margin-left
+       4. margin-right
+       5. margin (short hand form)
+
+  Flex properties:
+    1. display :flex;
+    2. flex-direction
+    3. flex-wrap
+    4. justify-content
+    5. align-items
+
+    6. flex-grow
+    7. flex-shrink
+    8. flex
+
+
+
+    sample testing
