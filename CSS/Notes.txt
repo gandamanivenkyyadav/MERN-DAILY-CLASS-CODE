@@ -158,4 +158,22 @@ Methods to apply stylings to web page:
 
 
 
-    sample testing
+   grid properties: 
+     1. display :grid
+     2. grid-template-colums
+     3. grid-template-rows
+     4. row-gap
+     5. column-gap
+
+     6. grid-row-start 
+     7. grid-row-
+
+     media queries :
+     -> media queries are used to build responsive web pages based on device width (device view port)
+     -> break points 
+      1. smaller devices (mobiles with brands)  0px - 450px
+      2. medium devices (tablets/ipad) 450px - 850px
+      3. large device(laptops) 850px - 1200px
+      4. x-large device(digital screen) >1200px
+
+      ->

@@ -1,0 +1,91 @@
+java script :
+-> java script is the scripting language as well as programming language
+
+why we need js:
+--------------
+
+ -> to build dynamic web applications
+ -> to add functionality to the we applications
+ -> to manipulate HTML and CSS
+ -> to achieve DOM(document object model) functionalities
+ -> to fetch data from server(API) and also to send data to server js is required
+
+ difference between java and javascript:
+ ---------------------------------------
+java                                                  javascript
+----                                                  ------------
+->java object oriented programming language          -> js is the scripting language as well as object based programming language
+-> java well supports the multi threading            -> javascript will supports single call stack
+-> java is the imperative in nature                  -> javascriptis the dynamically typed (In js no need to define datatype to the variable)
+-> java is the stictly follows the syntax            -> js is the thinly follows the syntax
+
+Tokens:
+-------
+ -> Tokens are the smallest unites/elements in the Js program
+
+ classifications:
+   1. identifiers
+     -> identifiers are the names given to 35 code
+      ex: variables 
+   2. literals
+     -> literals are the value given to the js code
+     types: 
+     1. string literals
+     2. numeric literals
+   3. keywords
+     -> keywords are the  predefine words which having its meaning
+     -> in js total 66 keywords present
+     ex: int ,char, function, float, boolen, class, const, var, let, if , else, for ,while around 66keywords.
+
+   4. separators
+     -> separators are used to separate the given code
+     ex: [1] ,{}, <>,
+   5. Operators:
+    -> Operatorsare 
+
+
+
+    strings:
+    -------
+     -> string are group of characters
+     -> we can declare string 3 ways
+    ""  
+    ''
+    `` -> template string & string interpolation
+
+     string inbuild function:
+     -----------------------
+
+    Arrays: 
+    ------
+     -> arrays are linear data structures used to homogenous or heterogenous types of data.
+     -> arrays size is not  fixed 
+
+       ways to declare arrays:
+       ----------------------
+        1. literal way
+        2. using new keyword (array object)
+
+        functios/methods:
+        --------
+functions is the block of statements which will get execute when even we called or invoke.
+  -> using functios we can increase code readability and code reusebility
+
+  basically we have 2 types functions:
+   1. user define functions
+    ->any functions that are declared by user or programmer as per there requirement.
+  2. predefine functions:
+   -> predefine functions means inbuilt functions
+
+   js functions types:
+   -------------------
+    1. Anonyms function:
+    
+    2. normal fuction / named function
+    3. functional expression
+    4. immediate invoking function/self calling function
+    5. arrow function(es6)
+    6. higher order function
+    7. nested function
+    8. callback function
+    9. generator function

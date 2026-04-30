@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      let userdetails=function(username,password){
+     console.log("this is functional expression");
+     return username+""+password
+     return
+     
+      }
+      let result=userdetails("venky@123",'admin');
+    console.log(userdetails('venky@123','admin'));
+    console.log(result);
+    userdetails("ramu","asssss") 
+  // normal function
+  function employeeDetails(name,role,salary,address){
+   // console.log("this is normal function..");
+   // console.log("name:",name);
+   //  console.log("role:",role);
+   //  console.log("salary",salary);
+   //  console.log("address",address);
+    return[name,role,salary,address]
+  }
+
+ let  emp1=employeeDetails("venky","hacher","1,20,000","london")
+ console.log(emp1);
+
+
+ // immediate invoking function/self calling function
+ (function(){
+    
+    console.log("this is immediate invoking functions");
+    
+ })
+ 
+    </script>
+</body>
+</html>
