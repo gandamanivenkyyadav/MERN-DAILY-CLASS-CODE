@@ -85,7 +85,18 @@ functions is the block of statements which will get execute when even we called 
     3. functional expression
     4. immediate invoking function/self calling function
     5. arrow function(es6)
-    6. higher order function
+    6. higher order function :
+      -> any fuction that will be accept another parameter
     7. nested function
-    8. callback function
-    9. generator function
+    8. callback function:
+       -> any function passing as value to the higher order function
+    9. generator function:
+        
+      bom : browser object model
+        -> it contains windows object    
+         
+         dom ( document object model):
+         ----------------------------
+           -> DOM are used to manipulate HTML and CSS
+           -> 
+                                                      

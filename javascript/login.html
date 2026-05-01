@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+    <style>
+        body{
+            border: 10px rgb(15, 15, 15);
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <h1>Login form</h1>
+            <label for="">Username :</label>
+            <input type="text" id="Username" placeholder="Username"> <br><br>
+            <label for="">Password :</label>
+            <input type="text" id="password" placeholder="Password"> <br><br>
+             <button type="submit">Login</button>
+             <button type="reset">cancel<button>
+       </fieldset>
+    </form>
+         <script>
+            let uname=document.getElementById("Username");
+            let psw=document.getElementById("password");
+            let form=document.querySelector("form");
+
+            form.addEventListener("submit",(e)=>{
+                e.preventDefault()
+                console.log("Username",uname.value);
+                console.log("password",password);
+                window.localStorage.setItem("Username",uname.value)
+                window.localStorage.setItem("password",psw.value)
+
+                let storedName=localStorage.getItem("Username")
+                let storedpassword=localStorage.getItem("password")
+                console.log("stored username",storedName);
+                console.log("stored password",storedpassword);
+window.open("./function.html")                
+                
+                
+            }
+        )
+         </script>
+             
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body id="body">
+    <script>
+        let b1 = document.getElementById("body")
+        let t1 = document.createElement("table")
+        let tr1 = document.createElement("tr")
+        let tr2 = document.createElement("tr")
+        let td1 = document.createElement("td")
+        let td2 = document.createElement("td")
+        let td3 = document.createElement("td")
+        let td4 = document.createElement("td")
+
+
+
+        t1.appendChild(tr1)
+        t1.appendChild(tr2)
+        tr1.appendChild(td1)
+        tr1.appendChild(td2)
+
+        tr2.appendChild(td3)
+        tr2.appendChild(td4)
+
+        td1.innerHTML = "<img height='500px' width='700px' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3HGn0Bth1A9K1Po2M_D-QocAGPF-1CYGF3A&s'/>"
+        td2.innerHTML = "<h1>HELLO</h1>"
+        td3.innerText = "102"
+        td4.innerText = "103"
+
+        t1.border = 1;
+        t1.cellSpacing = 0
+        t1.cellSpacing = 10
+        b1.appendChild(t1)
+        console.log(b1);
+
+        console.log(t1);
+        console.log(); 
+         tr2.removeChild(td3)
+         console.log(t1);
+         
+
+
+
+    </script>
+</body>
+
+</html>

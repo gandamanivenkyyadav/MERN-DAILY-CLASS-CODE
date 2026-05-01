@@ -33,11 +33,80 @@
 
  // immediate invoking function/self calling function
  (function(){
-    
+    let apikey="djjdjdjdjdjdjffffff"
     console.log("this is immediate invoking functions");
+    return apikey;
     
  })
+ ()
+  let a = 10;
+ // arrow function
+  let arrowfun=()=>console.log("arrow function");
+ arrowfun()
+arrowfun()
+
+  let text=(name,skills)=> {
+    let  a = 10
+     let b = 20
+     console.log(a,b);
+     console.log("name:",name,"skills:",skills);
+  }
+
+   text(["node js","express js","mongodb","react js"],"vivek ayan")
+  
+  function outerfun(a,b){
+      console.log("outer function");
+      return function innerfun(){
+        console.log(a,b);
+        console.log("inner function"); 
+      }
+    }
+  let result1=outerfun(10,20) 
+  result1()      
+
+// nothing
+    function homepage(){
+ console.log("homepage");
+ }
+function loginpage(){
+ console.log("loginpage logic");
  
-    </script>
+}
+ function registerpage(){
+  console.log("register page logic");
+  
+ }
+
+  homepage(registerpage(),loginpage())
+
+     function display(fun1,fun2){
+     fun1();
+     fun2();
+    
+     } display(()=>{
+        console.log("first callback function");
+        
+     },()=>{
+        console.log("second callback function");
+        
+     })
+      function* generator(){
+       yield 10;
+       yield 20;
+       yield 30;
+      console.log("this is generator function");
+      
+      } 
+      let nextgen=generator();
+      console.log(nextgen.next().value);
+      console.log(nextgen.next().value);
+      console.log(nextgen.next().value);
+      console.log(nextgen.next().value);
+      
+      
+      
+    
+
+  </script>
 </body>
 </html>
