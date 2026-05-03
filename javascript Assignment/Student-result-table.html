@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+  font-family: Arial;
+  text-align: center;
+}
+
+table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.green { background-color: #90ee90; }
+.yellow { background-color: #ffff99; }
+.orange { background-color: #ffcc99; }
+.red { background-color: #ff9999; }
+
+button {
+  margin: 2px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+    </style>
+</head>
+<body>
+
+    <h2> Student result table</h2>
+    <table id="Student table">
+     <thead>
+        <tr>
+            <th>name</th>
+            <th>roll no</th>
+            <th>CNN</th>
+            <th>CPP</th>
+            <th>ADE</th>
+            <th>DSA</th>
+            <th>Total</th>
+            <th>Percentage</th>
+            <th>Actions</th>
+        </tr>
+     </thead>
+</table>
+<script>
+    let students = [
+  {name:'Ravi', rollNo:'HU2025', marks:{CNN:50, CPP:78, ADE:80, DSA:69}},
+  {name:'Kiran', rollNo:'HU2026', marks:{CNN:90, CPP:88, ADE:85, DSA:92}},
+  {name:'Sita', rollNo:'HU2027', marks:{CNN:40, CPP:55, ADE:60, DSA:50}},
+  {name:'Arjun', rollNo:'HU2028', marks:{CNN:70, CPP:65, ADE:68, DSA:72}},
+  {name:'Meena', rollNo:'HU2029', marks:{CNN:30, CPP:45, ADE:50, DSA:40}}
+];
+
+// Generate more dummy students (to reach 20+)
+for(let i=6; i<=20; i++){
+  students.push({
+    name:'Student'+i,
+    rollNo:'HU20'+i,
+    marks:{
+      CNN: Math.floor(Math.random()*100),
+      CPP: Math.floor(Math.random()*100),
+      ADE: Math.floor(Math.random()*100),
+      DSA: Math.floor(Math.random()*100)
+    }
+  });
+}
+
+function getGradeClass(percentage){
+  if(percentage >= 85) return "green";
+  else if(percentage >= 65) return "yellow";
+  else if(percentage >= 55) return "orange";
+  else return "red";
+}
+
+function renderTable(){
+  const tbody = document.querySelector("#studentTable tbody");
+  tbody.innerHTML = "";
+
+  students.forEach((student, index)=>{
+    let m = student.marks;
+    let total = m.CNN + m.CPP + m.ADE + m.DSA;
+    let percentage = (total / 4).toFixed(2);
+
+    let row = document.createElement("tr");
+    row.className = getGradeClass(percentage);
+
+    row.innerHTML = `
+      <td>${student.name}</td>
+      <td>${student.rollNo}</td>
+      <td>${m.CNN}</td>
+      <td>${m.CPP}</td>
+      <td>${m.ADE}</td>
+      <td>${m.DSA}</td>
+      <td>${total}</td>
+      <td>${percentage}%</td>
+      <td>
+        <button onclick="editStudent(${index})">Edit</button>
+        <button onclick="deleteStudent(${index})">Delete</button>
+      </td>
+    `;
+
+    tbody.appendChild(row);
+  });
+}
+
+function deleteStudent(index){
+  students.splice(index,1);
+  renderTable();
+}
+
+function editStudent(index){
+  let student = students[index];
+
+  let name = prompt("Enter Name:", student.name);
+  let CNN = prompt("Enter CNN marks:", student.marks.CNN);
+  let CPP = prompt("Enter CPP marks:", student.marks.CPP);
+  let ADE = prompt("Enter ADE marks:", student.marks.ADE);
+  let DSA = prompt("Enter DSA marks:", student.marks.DSA);
+
+  students[index] = {
+    name: name,
+    rollNo: student.rollNo,
+    marks:{
+      CNN: Number(CNN),
+      CPP: Number(CPP),
+      ADE: Number(ADE),
+      DSA: Number(DSA)
+    }
+  };
+
+  renderTable();
+}
+
+// Initial render
+renderTable();
+</script>
+</body>
+</html>

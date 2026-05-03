@@ -18,7 +18,7 @@
 </head>
 <body>
     <h1>EMP Details </h1>
-    <input type="search" placeholder="search employee's" > <br><br>
+    <input type="search" id="input" placeholder="search employee's" > <br><br>
   <table border="1" cellpadding="10" cellspacing="0" >
     <thead>
         <tbody>
@@ -54,10 +54,19 @@
     </thead>
   </table>   
   <script>
- let row=document.querySelectorAll("tbody tr")
-   document.querySelecto("input")
-   console.log("")
+ let row=document.querySelectorAll("tbody tr");
+ let input=document.querySelector("input");
+  
+  input.addEventListener('keyup',()=>{
+    let inputText = input.value.toLocaleLowerCase()
+    rows.forEach((row) => {
+   
+    console.log(input.value.toLocaleLowerCase);
     
+    
+  })
+//  input.onkeyup=()=>{
+//  }
   </script>
 
 

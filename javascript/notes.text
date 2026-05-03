@@ -98,5 +98,41 @@ functions is the block of statements which will get execute when even we called 
          dom ( document object model):
          ----------------------------
            -> DOM are used to manipulate HTML and CSS
-           -> 
-                                                      
+           -> to build dynamic web pages
+
+
+           loops:
+           -----
+              loops are used to iterate the statements until the conditions satisfied.                                                      
+               1. for loop 
+                 syntax: for(initialization; condition; increment/decrement)
+               2. while loop 
+                 syntax: while (condition){
+                  increment/decrement
+                 }
+               3. do while loop 
+                  syntax:  do{
+                    increment/decrement;
+                  }while(condition);
+               4. for-in-loop  
+                    -> only used in arrays and strings
+                    -> it used to fetch only index values
+
+               5.for-of-loop :
+                 -> for-of loop is used to 
+               6.for each loop 
+                 -> it is higher order function used to iterate arrays
+                 syntax: 
+                 Arrays.forEach((value,index,array)=>{
+                  
+                 })
+  Arrays inbuilt methods:
+  ----------------------
+  1. map()
+  2. filter()
+  3. reduce()
+
+  spread operators : Es 6
+  ------------------------
+
+    -> ...  

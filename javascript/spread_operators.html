@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr1=[10,20,30,40];
+        let arr2=[50,null, {name:"ravi",role:"developer"},()=>{
+            console.log("Hello");
+        }]
+// spread operators in array
+        let arr3=[...arr1,...arr2,"html","css",true];
+        console.log(arr3);
+   // array de-structuring     
+        let [a,b,c,d]=arr1;
+        console.log(a,b,c,d);
+       // spread operators
+       
+       let emp1={
+           name:"ramu",
+           phone: 9133557644
+       }
+       let orderDetails={
+        productname: "mobile",
+        price: 5000,
+        status: "done"
+       }
+       let oderhistory ={
+        ...emp1,
+        ...orderDetails,
+       }
+       console.log(oderhistory);
+       
+        
+        
+    </script>
+</body>
+</html>
