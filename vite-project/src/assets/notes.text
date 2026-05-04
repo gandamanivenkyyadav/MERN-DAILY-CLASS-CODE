@@ -1,0 +1,46 @@
+  react js:
+  -------
+  -> react js is the small js library
+  
+  features:
+  -> react js is component based
+  -> it supports Virtual DOM
+  -> using react js we can build (SPA) single page of applications
+  -> react js will follow defining algorithm
+
+  library:
+  --------
+  -> collection of code is called as library
+  -> ex: react js, jquery, anime js etc
+
+  frameworks:
+  -----------
+  -> collection of liraries is called as frameworks
+  -> ex: angular js, next js, express js, electron js,vue js
+
+  JS(javascript and XML [ extendable markup language]):
+  --------------------------------------------------------
+
+  -> react will understand JSX code but browsers will not understand JSX it understand only js code (because every browsers having JS engin's)
+  -> to convert JSX code to JS(javascript) we have next-generation compiler called "babel js"
+
+  -> JSX is similar to HTML , here it allow both JS and HTML code
+   
+   rules: -> JSX fileNames is always starts with capital letters
+          -> here we can achive javascript expression ->{}
+          -> in return function HTML elements contains parentTag
+          -> JSX will allow empty fragments (<> </>)
+
+   components in react:
+   -------------------
+     -> components are the smallest UI blocks
+
+     called as components
+     
+      types: 
+      1. class based components
+      -> components are declared using class keyword is called as class based components
+      -> In CBC constructors, super keyword, this keyword is present also render(),and life cycle methods are present
+      -> in CBC states are present so that's why is called as a statefull components
+      2. function based components
+      
