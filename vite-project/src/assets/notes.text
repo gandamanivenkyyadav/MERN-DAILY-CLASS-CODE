@@ -42,5 +42,83 @@
       -> components are declared using class keyword is called as class based components
       -> In CBC constructors, super keyword, this keyword is present also render(),and life cycle methods are present
       -> in CBC states are present so that's why is called as a statefull components
-      2. function based components
+       syntax:
+        import (Component) from "react";
+        class ClassName extends component{
+          render(){
+            return(
+              html code
+            )
+          }
+        }
+       
+      2. function based components (FBC): (16.8 -> hooks)
+        -> we can declared FBC using arrow function or normal function or functional expression
+        -> In FBC constructors, super keyword, this keyword not present
+        -> render() and life cycle methods also not present
+        -> In FBC state are not present so thats why is also called as stateless components
+
+      syntax:  1
+           
+             const ComponentName=()=>{
+              return(
+                html code here.....
+              )
+             }
+             export default ComponentName;
+       
+       syntax: 2
+          
+             function ComponentName(){
+              return(
+                html code here
+              )
+             }
+             export default ComponentName;
+
+      syntax: 3
+         
+             const ComponentName=function(){
+              return(
+                html code here ...
+              )
+             }
+             export default ComponentName;
+
+
+    States in React:
+    ---------------
+
+      -> states are used to bold the data
+      -> states are mutable in nature
+      -> states are present only in CBC
+
+    hooks :
+    -----
+      -> hooks are used to make function based components state full
+      -> hooks are used only FBC 
+      -> hooks are introduced in 16.8 react version
+
+      Ex: 1. usestate()
+          2. useEffect()
+          3. useNavigate()
+          4. useMemo()
+          5. useContext()
+          6. useReduce()
+          7. useRef()...etc
+
+
+
+      states to function based components:
+      -----------------------------------
+
+      -> we can declared state in FBC using usestate() hooks
       
+      props:
+      -----
+
+      -> are used to transfer data from one components to another 
+      -> are immutable in nature
+      -> are present both in cbc and FBC
+           
+             
