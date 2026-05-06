@@ -1,0 +1,53 @@
+/* nav sstyling */
+
+#nav-container{
+    background-image: linear-gradient(#FF930F, #FFBA5C);
+    
+}
+
+
+#login-btn a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-style: italic;
+}
+#Greeting-btn{
+    position: fixed;
+    z-index: 2;
+    border-radius: 10px;
+    padding: 8px;
+    border: none;
+    top: 250px;
+    background-color: #FFBA5C;
+
+}
+#Greeting-btn:hover{
+    background-color: #FFBA5C;
+    text-shadow: 3px 3px 3px aliceblue;
+    font-weight: bold;
+    box-shadow: 2px 2px 2px aliceblue;
+    cursor: pointer;
+}
+
+/* register form stylings */
+
+#form-continer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: aqua;
+}
+#form-continer form {
+    border: 1px solid;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: aliceblue;
+    box-shadow: 3px 3px 3px;
+
+}
+#form-continer label{
+    font-weight: bold;
+    font-style: italic;
+}
