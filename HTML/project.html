@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quick Poll</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            padding: 30px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+        }
+        .poll {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Quick Poll Creator</h1>
+
+<input type="text" id="question" placeholder="Enter your question"><br>
+
+<input type="text" class="option" placeholder="Option 1"><br>
+<input type="text" class="option" placeholder="Option 2"><br>
+<input type="text" class="option" placeholder="Option 3"><br>
+
+<button onclick="createPoll()">Create Poll</button>
+
+<div class="poll" id="pollBox"></div>
+
+<script>
+let pollData = {
+    question: "",
+    options: []
+};
+
+function createPoll() {
+    const question = document.getElementById("question").value;
+    const options = [...document.querySelectorAll(".option")]
+        .map(opt => ({ text: opt.value, votes: 0 }));
+
+    pollData = { question, options };
+    displayPoll();
+}
+
+function displayPoll() {
+    const pollBox = document.getElementById("pollBox");
+
+    pollBox.innerHTML = `
+        <h2>${pollData.question}</h2>
+        ${pollData.options.map((opt, i) => `
+            <button onclick="vote(${i})">
+                ${opt.text} (${opt.votes})
+            </button>
+        `).join("<br><br>")}
+    `;
+}
+
+function vote(index) {
+    pollData.options[index].votes++;
+    displayPoll();
+}
+</script>
+
+</body>
+</html>

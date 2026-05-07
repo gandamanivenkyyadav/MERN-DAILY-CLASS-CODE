@@ -10,7 +10,7 @@ function Register() {
       <Row className="mb-3">
          <Form.Group as={Col} controlId="formGridName">
           <Form.Label>Name</Form.Label>
-          <Form.Control type="email" placeholder="Enter Name" />
+          <Form.Control type="name" placeholder="Enter Name" />
          </Form.Group> 
           
            <Form.Group as={Col} controlId="formGridPhone NO">
@@ -28,7 +28,7 @@ function Register() {
           <Form.Control type="password" placeholder="Password" />
         </Form.Group>
       </Row>
-
+       
       <Form.Group className="mb-3" controlId="formGridAddress1">
         <Form.Label>Address</Form.Label>
         <Form.Control placeholder="1234 Main St" />

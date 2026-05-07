@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quick Poll App</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: Arial; text-align: center; padding: 30px; }
+        input, button { padding: 10px; margin: 5px; }
+        .poll { margin-top: 20px; } 
+        body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #333;
+}
+
+/* Title */
+h1 {
+    color: white;
+    margin-top: 20px;
+}
+
+/* Card container */
+#creator, .poll {
+    background: white;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Inputs */
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #4facfe;
+}
+
+/* Buttons */
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 8px;
+    background: #4facfe;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #007bff;
+    transform: scale(1.05);
+}
+
+/* Disabled button */
+button:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+
+/* Poll options */
+.poll button {
+    display: block;
+    width: 100%;
+}
+
+/* Timer text */
+#timerText {
+    font-weight: bold;
+    color: #ff4d4d;
+}
+
+/* Canvas (chart) */
+canvas {
+    margin-top: 20px;
+    max-width: 400px;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    #creator, .poll {
+        width: 90%;
+    }
+}
+    </style>
+</head>
+<body>
+
+<h1>🚀 Quick Poll</h1>
+
+<div id="creator">
+    <input type="text" id="question" placeholder="Enter question"><br>
+    <input type="text" class="option" placeholder="Option 1"><br>
+    <input type="text" class="option" placeholder="Option 2"><br>
+    <input type="text" class="option" placeholder="Option 3"><br>
+
+    ⏱️ Duration (minutes):  
+    <input type="number" id="timer" placeholder="e.g. 1"><br>
+
+    <button onclick="createPoll()">Create Poll</button>
+</div>
+
+<div class="poll" id="pollBox"></div>
+<canvas id="chart" width="300"></canvas>
+
+<script>
+let pollData = null;
+let hasVoted = false;
+
+// 🔹 Load poll
+window.onload = function() {
+    const savedPoll = localStorage.getItem("poll");
+    const voted = localStorage.getItem("voted");
+
+    if (savedPoll) {
+        pollData = JSON.parse(savedPoll);
+        hasVoted = voted === "true";
+        document.getElementById("creator").style.display = "none";
+        displayPoll();
+        startTimer();
+    }
+};
+
+// 🔹 Create poll
+function createPoll() {
+    const question = document.getElementById("question").value;
+    const options = [...document.querySelectorAll(".option")]
+        .map(o => o.value)
+        .filter(o => o !== "")
+        .map(o => ({ text: o, votes: 0 }));
+
+    const minutes = document.getElementById("timer").value;
+
+    if (!question || options.length < 2) {
+        alert("Enter question + at least 2 options");
+        return;
+    }
+
+    const endTime = Date.now() + (minutes * 60000);
+
+    pollData = { question, options, endTime };
+
+    localStorage.setItem("poll", JSON.stringify(pollData));
+    document.getElementById("creator").style.display = "none";
+
+    displayPoll();
+    startTimer();
+}
+
+// 🔹 Show poll
+function displayPoll() {
+    const pollBox = document.getElementById("pollBox");
+
+    const disabled = hasVoted ? "disabled" : "";
+
+    pollBox.innerHTML = `
+        <h2>${pollData.question}</h2>
+        <p id="timerText"></p>
+
+        ${pollData.options.map((opt, i) => `
+            <button ${disabled} onclick="vote(${i})">
+                ${opt.text} (${opt.votes})
+            </button>
+        `).join("<br><br>")}
+
+        <br><br>
+        <button onclick="sharePoll()">🔗 Share</button>
+        <button onclick="resetPoll()">Reset</button>
+    `;
+
+    drawChart();
+}
+
+// 🔹 Vote (only once)
+function vote(index) {
+    if (hasVoted) return;
+
+    pollData.options[index].votes++;
+    hasVoted = true;
+
+    localStorage.setItem("voted", "true");
+    localStorage.setItem("poll", JSON.stringify(pollData));
+
+    displayPoll();
+}
+
+// 🔹 Chart
+function drawChart() {
+    const ctx = document.getElementById("chart");
+
+    new Chart(ctx, {
+        type: "bar",
+        data: {
+            labels: pollData.options.map(o => o.text),
+            datasets: [{
+                label: "Votes",
+                data: pollData.options.map(o => o.votes)
+            }]
+        }
+    });
+}
+
+// 🔹 Timer
+function startTimer() {
+    const interval = setInterval(() => {
+        const remaining = pollData.endTime - Date.now();
+
+        if (remaining <= 0) {
+            document.getElementById("timerText").innerText = "⛔ Poll Ended";
+            clearInterval(interval);
+            return;
+        }
+
+        const sec = Math.floor(remaining / 1000);
+        document.getElementById("timerText").innerText =
+            "⏱️ Ends in: " + sec + " sec";
+    }, 1000);
+}
+
+// 🔹 Share link
+function sharePoll() {
+    const data = btoa(JSON.stringify(pollData));
+    const link = location.href.split("?")[0] + "?poll=" + data;
+
+    // ✅ Try native sharing (WhatsApp, Instagram, etc.)
+    if (navigator.share) {
+        navigator.share({
+            title: "Vote on my Poll",
+            text: "Check out this poll and vote!",
+            url: link
+        })
+        .then(() => console.log("Shared successfully"))
+        .catch(err => console.log("Share cancelled", err));
+    } else {
+        // ❌ Fallback (copy link)
+        copyLink(link);
+    }
+}
+
+// 🔹 Load shared poll
+const params = new URLSearchParams(window.location.search);
+if (params.get("poll")) {
+    const data = JSON.parse(atob(params.get("poll")));
+    pollData = data;
+    localStorage.setItem("poll", JSON.stringify(pollData));
+}
+
+// 🔹 Reset
+function resetPoll() {
+    localStorage.clear();
+    location.reload();
+}
+</script>
+
+</body>
+</html>
