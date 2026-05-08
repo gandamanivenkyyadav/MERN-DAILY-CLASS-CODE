@@ -9,10 +9,22 @@ import Login from "./pages/Login";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/style.css';
 import LandingPage from "./pages/LandingPage";
+import { Children, createContext } from "react";
+
+const CartContext = createContext();
+ 
+ export const CartProvider=({Children})=>{
+ return(<CartContext.Provider>{Children}</CartContext.Provider>)
+  }
+
+
 const App=()=>{
+
+  const productDetails = {name: "laptop"}
 return(
   <>
   <BrowserRouter>
+ <CartContext value={productDetails} >
    <NavBar />
   <Routes>
     <Route path="/" element={<LandingPage/>}/>
@@ -22,8 +34,10 @@ return(
    <Route path="dashboard" element={<Dashboard/>}/>
    <Route path="home" element={<Home/>}/>
   </Routes>
+  </CartContext> 
   </BrowserRouter>
   </>
+
 )
 }
   export default App;

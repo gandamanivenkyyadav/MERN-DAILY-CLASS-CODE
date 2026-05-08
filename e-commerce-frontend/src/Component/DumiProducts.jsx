@@ -20,7 +20,7 @@ function DumiProducts() {
                 longer.
               </Card.Text>
               <button className='btn btn-warning'>Add to cart</button>
-              <button className='btn btn-warning'>buy</button>
+              <button className='btn btn-primary'>buy</button>
             </Card.Body>
           </Card>
         </Col>
