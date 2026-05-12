@@ -1,0 +1,38 @@
+ Node js:
+ -------
+- which create a V8 engine 
+->node js is the run time server side javascript runTime Environment.
+-> using node js we can build server (http core model)
+
+Run js File:
+-----------
+command -> node fileName
+
+User Define Modules:
+-------------------
+-> any functions defined by user 
+
+-> export Modules from one file to another file 
+   syntax: Module.export = ModuleName 
+             model.exports={ModuleName1 , ModuleName2...}
+
+-> import exported Module
+   syntax: const {moduleName1 ,moduleName2}=require("fileName)
+
+   node.js core modules :
+   --------------------
+   fs path os http
+   the important id fs and http
+
+
+   fs 
+
+   unlink:("sample")
+
+   path module: 
+   ------------
+  http module:
+   it used to create http servers(backend apls)
+   node.js can create a server without express using the http module
+   
+   
