@@ -1,0 +1,46 @@
+ database:
+ ----------
+  -> place where we can store data is called as a database
+
+  types of data:
+
+  1. structure data: 
+       -> sql,mysql,postgres sql,sql server..etc
+  2. semi-structure 
+       ->  no sql database  is one of the data and that is not fit for teristal 
+         ex: 1. mongodb-document format
+             2. cassandra - nodes
+             3. hbase - column-family
+             4. neo4j - nodes
+             5. raik - key-value pair
+
+  3. unstructure:
+      -> 
+
+ MongoDB :
+  -> no sql database used to store
+
+  collection :
+   -> 
+
+   aggregate functions(affregate pipelines)
+   ----------------------------------------
+
+    -> aggregate functions are used to perform operations on stage by stage 
+
+    sytax: db.collectionName.aggregate({
+     (stage 1),
+     (stage 2),
+     ..
+    }) 
+
+    aggregate operators:
+    1. $match
+    2. $group
+    3. $min
+    4. $max
+    5. $avg
+    6. $count
+    7. $lookup( to perform join in MongoDB)
+
+    

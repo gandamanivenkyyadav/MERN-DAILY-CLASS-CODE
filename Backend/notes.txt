@@ -1,0 +1,41 @@
+app.get("/",(req , res)=>{
+     res.status(200).send("hello world");
+ })
+ app.get("/getusers",(req , res)=>{
+     res.status(200).json({name:"venky",
+         role: "developer",
+         email: "venky12@gamil.come",
+         phone: "9133557644",
+     })
+ })
+
+
+const studentDetails=[];
+
+app.use(express.json())
+app.post("/add-student", (req, res)=>{
+    const newStudent = {
+        stdName: req.body.name,
+        stdRollNo: req.body.rollno,
+        stdBranch: req.body.branch,
+        stdSkills: req.body.skills,
+    };
+    studentDetails.push(newStudent);
+    res.status(200).json(studentDetails)
+    })
+
+    app.get("/getstudent",(eq,res)=> {
+       res.status(200).json(studentDetails) 
+    })
+
+     app.post("/add-multiplestudents",(req,res)=>{
+        const newStudent = req.body.allStudents;
+        res.status(200).json({message: "multiple students added success"})
+ })
+
+
+
+app.listen(PORT,()=>{
+    console.log("server running on port",PORT);
+    
+})
